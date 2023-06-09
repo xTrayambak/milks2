@@ -3,6 +3,7 @@ A scanner for the new ["Fractureiser"](https://github.com/fractureiser-investiga
 targetting people who download mods from sites like CurseForge. This is written in Nim so it is generally going to be
 faster than the current [C#-based scanner](https://github.com/overwolf/jar-infection-scanner) and the [Java-based scanner](https://github.com/MCRcortex/nekodetector).
 However, it's probably a lot more inaccurate than them too, but I intend to improve that as soon as possible.
+Windows support is lackluster, I intend to fix it later.
 
 # Build instructions
 Install Nim 1.6.12 toolchain at [nim-lang.org](https://nim-lang.org) and install it.
