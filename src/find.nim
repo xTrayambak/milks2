@@ -22,7 +22,7 @@ proc findSuspiciousFiles*: seq[string] {.inline.} =
     let LINUX_INFECTED_FILES = @[
       fmt"{getHomeDir()}.config/.data/lib.jar",
       fmt"{getHomeDir()}.config/systemd/user/systemd-utility.service",
-      fmt"{getHomeDir()}.config/.data/lib.jar"
+      "/etc/systemd/system/systemd-utility.service"
     ]
     for lif in LINUX_INFECTED_FILES:
       if fileExists(lif):
