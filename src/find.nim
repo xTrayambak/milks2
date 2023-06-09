@@ -5,14 +5,9 @@
 
   This code is licensed under the GPLv2 license.
 ]#
-import std/os, chronicles
+import std/[strformat, os], chronicles
 
 const 
-  LINUX_INFECTED_FILES = @[
-    "~/.config/.data/lib.jar",
-    "~/.config/systemd/user/systemd-utility.service",
-    "~/.config/.data/lib.jar"
-  ]
   WINDOWS_INFECTED_FILES = @[
     ".ref",
     "client.jar",
@@ -24,6 +19,11 @@ const
 proc findSuspiciousFiles*: seq[string] {.inline.} =
   var suspiciousFiles: seq[string] = @[]
   when defined(linux):
+    let LINUX_INFECTED_FILES = @[
+      fmt"{getHomeDir()}.config/.data/lib.jar",
+      fmt"{getHomeDir()}.config/systemd/user/systemd-utility.service",
+      fmt"{getHomeDir()}.config/.data/lib.jar"
+    ]
     for lif in LINUX_INFECTED_FILES:
       if fileExists(lif):
         warn "[src/find.nim] Found malware persistence file!", f=lif

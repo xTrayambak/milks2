@@ -30,7 +30,7 @@ proc main =
     for file in suspiciousFiles:
       echo fmt">> {file}"
 
-    echo "In total, around {suspiciousFiles.len} files were found that are known to be Fractureiser infection vectors."
+    echo fmt"In total, around {suspiciousFiles.len} files were found that are known to be Fractureiser infection vectors."
 
     let shouldDisinfect = readLineFromStdin("Start disinfection? [y/N]: ").toLowerAscii() == "y"
 
