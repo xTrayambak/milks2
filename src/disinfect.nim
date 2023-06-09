@@ -36,5 +36,12 @@ proc disinfect*(suspiciousFiles: seq[string]) {.inline.} =
       removeDir(suspiciousFile)
     else:
       removeFile(suspiciousFile)
+  
+  when defined(win32) or defined(win64):
+    info "[src/disinfect.nim] Disinfection done. Restart your PC!"
 
-  info "[src/disinfect.nim] Disinfection done. Restart your PC!"
+  when defined(linux):
+    info "[src/disinfect.nim] Disinfection done. Restarting ALL systemd daemons."
+    discard execCmd("sudo systemctl daemon-reload")
+    discard execCmd("systemctl --user daemon-reload")
+    info "[src/disinfect.nim] Total disinfection complete."

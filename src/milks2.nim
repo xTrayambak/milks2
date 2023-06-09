@@ -37,6 +37,9 @@ proc main =
     if shouldDisinfect:
       let startDisinfectTime = cpuTime()
       info "[src/milks2.nim] Finally, a worthy opponent. Our battle will be legendary!"
+      # info "[src/milks2.nim] Blocking all known Fractureiser command-and-control server IP addresses"
+      # patchDns()
+      info "[src/milks2.nim] Done. Now deleting all infected files."
       disinfect(suspiciousFiles)
       echo fmt"* Disinfection took {cpuTime() - startDisinfectTime} seconds"
       info "[src/milks2.nim] You should (hopefully) be safe now. Make sure to donate a chocolate chip cookie if this was useful for you!"
