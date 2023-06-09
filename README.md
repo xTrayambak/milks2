@@ -6,10 +6,23 @@ However, it's probably a lot more inaccurate than them too, but I intend to impr
 Windows support is lackluster, I intend to fix it later.
 
 # Build instructions
+Install Git CLI from https://git-scm.com/downloads (On Windows, most Linux distributions bundle it by default)
 Install Nim 1.6.12 toolchain at [nim-lang.org](https://nim-lang.org) and install it.
-After that, run the following:
+Open a terminal/command prompt, then run:
 ```
+$ git clone https://github.com/xTrayambak/milks2.git
 $ nimble build -d:release
+```
+
+# Run instructions (Windows)
+Open up a Command Prompt as an administrator after following the above instructions, and run the following:
+```
+milks2
+```
+
+# Run instructions (Linux)
+Open up a terminal after following the above instructions, and run the following:
+```bash
 $ ./milks2
 ```
 
